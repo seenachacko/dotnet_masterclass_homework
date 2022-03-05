@@ -4,7 +4,7 @@ Console.WriteLine($"Reversed input value: {reversed}");
 
 string ReverseString(string input)
 {
-    char[] myArr = input.ToCharArray();
-    Array.Reverse(myArr);
-    return new string(myArr);
+    char[] iputArray = input.ToCharArray();
+    Array.Reverse(iputArray);
+    return new string(iputArray);
 }

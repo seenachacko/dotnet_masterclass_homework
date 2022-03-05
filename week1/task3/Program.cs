@@ -9,7 +9,7 @@ int[] GetResult(int[] input)
 
     foreach (int number in input)
     {
-        if (number >= 0)
+        if (number > 0)
         {
             multiplicationResult = multiplicationResult * number;
         }
