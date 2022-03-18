@@ -5,7 +5,7 @@ PrintTime(time);
 void PrintTime(JupiterTime time)
 {
     if (time.Minutes < 10) Console.WriteLine($"{time.Hours}:0{time.Minutes}");
-    else Console.WriteLine($"{time.Hours}:{time.Minutes}");
+    else Console.WriteLine($"{time.Hours:00}:{time.Minutes:00}");
 }
 class JupiterTime
 {
@@ -35,7 +35,7 @@ class JupiterTime
             else if (value > 60)
             {
                 _hours = _hours + (value / 60);
-                if (_hours > 9) _hours = _hours - 10;
+                if (_hours > 9) _hours = _hours % 10;
                 _minutes = (value % 60);
             }
             else _minutes = value;

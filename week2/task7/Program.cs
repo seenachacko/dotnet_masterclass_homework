@@ -61,7 +61,7 @@ class Signaler
     {
         SinglerTimeList.Add(time);
     }
-    
+
 
     public void Inform()
     {
@@ -79,20 +79,19 @@ class Signaler
     }
     public void Check(JupiterTime time)
     {
+        bool timerFound = false;
         foreach (var item in SinglerTimeList)
         {
-            if (time.Hours > item.Hours  || (time.Hours == item.Hours && time.Minutes > item.Minutes))
+            if (time.Hours > item.Hours || (time.Hours == item.Hours && time.Minutes > item.Minutes))
             {
-                  Console.WriteLine($"{item.Hours}:{item.Minutes}");
-            }else
-            {
-                 Console.WriteLine("No signals needed to be sent yet");
+                Console.WriteLine($"{item.Hours}:{item.Minutes}");
+                timerFound = true;
             }
-            
         }
+        if (!timerFound) Console.WriteLine("No signals needed to be sent yet.");
 
     }
-    
+
 
 
 }

@@ -18,17 +18,13 @@ class TitanTime
     public int Minutes;
     public TitanTime(int hour, int minutes)
     {
-
-        if (hour < 0)
-        {
-            Console.WriteLine("should be grater than 0");
-
-        }
-        else
-        {
-            Hour = hour % 900 + minutes / 60;
-            Minutes = minutes % 60;
-        }
+    if (hour < 0 || minutes < 0) throw new Exception("should be grater than 0");
+    Hour = hour % 900;
+    if (minutes > 60)
+    {
+    Minutes = minutes % 60;
+    Hour += minutes / 60;
+    }
 
     }
     public override string ToString()

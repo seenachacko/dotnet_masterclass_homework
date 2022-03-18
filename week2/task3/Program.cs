@@ -19,7 +19,7 @@ class JupiterTime
         }
         set
         {
-            if (value < 0) throw new Exception("negative number not acceptable");
+            if (value < 0) _hours=(10+_hours+value)%10;
             else if (value > 9) _hours = (value % 10);
             else _hours = value;
         }
