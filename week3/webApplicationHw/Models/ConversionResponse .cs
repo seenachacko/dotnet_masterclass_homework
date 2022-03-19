@@ -1,11 +1,8 @@
 namespace webApplicationHw.Models;
-
-public class ConversionResponse
-{
+public class ConversionResponse{
     public double Value { get; set; }
     public string ValueType { get; set; }
-    public List<ConversionResponse> conversions(ConversionRequest Request)
-    {
+    public List<ConversionResponse> Conversions(ConversionRequest Request){
         List<ConversionResponse> Response = new List<ConversionResponse>();
         if (Request.TypeToConvert == ConversionRequest.ValueType.Gallons)
         {

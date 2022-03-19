@@ -1,7 +1,6 @@
 namespace webApplicationHw.Models;
 
-public class ConversionRequest
-{
+public class ConversionRequest{
     public double Value { get; set; }
     public ValueType TypeToConvert { get; set; }
 
