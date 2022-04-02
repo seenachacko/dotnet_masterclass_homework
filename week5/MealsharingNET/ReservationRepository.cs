@@ -5,6 +5,26 @@ using MySql.Data.MySqlClient;
 using Dapper;
 public class ReservationRepository : IReservationRepository{
 
+
+    // private List<Reservation> Reservations { get; set; } = new List<Reservation>(){
+    //     new Reservation()
+    //     {
+    //         ID=1,
+    //         NoOfPersons=6,
+    //         MealID=2,
+    //         Name= "Hanie",
+    //         Email="hanie@gmail.com"
+    //     },
+    //     new Reservation()
+    //     {
+    //         ID=2,
+    //         NoOfPersons=2,
+    //         MealID=1,
+    //         Name= "Reza",
+    //         Email="reza@gmail.com"
+    //     }
+    // };
+
  public async Task<IEnumerable<Reservation>> ReservationList()
     {
         await using var connection = new MySqlConnection(Shared.ConnectionString);
