@@ -12,16 +12,19 @@ public class UserController : ControllerBase
     {
         _repo = repo;
     }
+
     [HttpGet("ListAllUsers")]
     public async Task<List<User>> ListAllUser()
     {
         return (await _repo.ListOfUsers()).ToList();
     }
+
     [HttpPost("AddUser")]
     public async Task AddUser([FromBody] User user)
     {
         await _repo.AddUser(user);
     }
+    
     [HttpGet("FindUserById")]
     public async Task<User> FindUserById(int id)
     {
