@@ -1,8 +1,7 @@
-namespace MealsharingNET.Services;
-using System.Collections.Generic;
 using MealsharingNET.Models;
 using MySql.Data.MySqlClient;
 using Dapper;
+namespace MealsharingNET.Services;
 public class MealRepository : IMealRepository
 {
      public async Task<IEnumerable<Meal>> ListOfMeals()

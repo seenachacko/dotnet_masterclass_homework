@@ -1,4 +1,4 @@
-namespace MealsharingNET;
+namespace MealsharingNET.Models;
 
 public class User
 {
