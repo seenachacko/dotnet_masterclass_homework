@@ -3,7 +3,7 @@ using MealsharingNET.Models;
 namespace MealsharingNET.Controllers;
 
 [ApiController]
-[Route("meals")]
+[Route("api/meals")]
 public class MealController : ControllerBase
 {
     private IMealRepository _repo;
@@ -11,23 +11,24 @@ public class MealController : ControllerBase
     {
         _repo = repo;
     }
-    [HttpGet("ListAllMeals")]
+    [HttpGet("")]
     public async Task<List<Meal>> ListAllMeals()
     {
         return (await _repo.ListOfMeals()).ToList();
     }
-    [HttpPost("AddMeal")]
+    [HttpPost("")]
     public async Task AddMeal([FromBody] Meal meal)
     {
         await _repo.AddMeal(meal);
     }
-    [HttpGet("FindMealById")]
-    public async Task<Meal> FindMealById(int id)
+    [HttpGet("{id}")]
+    public async Task<Meal[]> FindMealById(int id)
     {
-        return await _repo.FindMealById(id);
+        var meal =  await _repo.FindMealById(id);
+        return new[]{meal};
     }
 
-    [HttpDelete("DeleteMeal")]
+    [HttpDelete("{id}")]
     public async Task DeleteMeal(int id)
     {
         await _repo.DeleteMeal(id);
